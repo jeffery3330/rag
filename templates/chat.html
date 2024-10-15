@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+<body>
+    <div class="sidebar">
+        <h2>PDFs</h2>
+        <ul class="file-list" id="file-list">
+        </ul>
+    </div>
+
+    <div class="chat-section">
+        <div class="chat-container" id="chat-box">
+        </div>
+        <div class="input-container">
+            <input type="text" id="user-input" onkeydown="sendMessage(this)" placeholder="Type a message..." autofocus>
+            <button id="record-button" class="record-button" onclick="toggleRecording()">Record</button>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.0/socket.io.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

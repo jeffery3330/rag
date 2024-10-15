@@ -1,0 +1,117 @@
+html {
+    height: 98%;
+    width: 98%;
+}
+body {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+    font-family: Arial, sans-serif;
+}
+.sidebar {
+    width: 17%;
+    height: 100%;
+    border-right: 1px solid #ccc;
+    padding: 10px;
+    overflow-y: auto;
+}
+.sidebar h2 {
+    text-align: center;
+    font-size: 1.2rem;
+}
+.file-list {
+    list-style-type: none;
+    padding: 0;
+}
+.file-list li {
+    padding: 10px;
+    margin-bottom: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.file-list li:hover {
+    background-color: #f0f0f0;
+}
+.chat-section {
+    width: 83%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.chat-container {
+    width: 60%;
+    height: 80%;
+    border: 1px solid #ccc;
+    overflow-y: scroll;
+    padding: 2%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.input-container {
+    display: flex;
+    width: 60%;
+    margin-top: 1%;
+    margin-left: auto;
+    margin-right: auto;
+}
+input[type="text"] {
+    width: 92%;
+    padding: 1%;
+    border-radius: 10px;
+}
+.record-button {
+    width: 8%;
+    padding: 1%;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-left: 5px;
+}
+.record-button.stop {
+    background-color: red;
+}
+.message {
+    max-width: 50%;
+    width: fit-content;
+    padding: 1.5%;
+    margin: 5px 0;
+    border-radius: 10px;
+    word-wrap: break-word;
+}
+.user-message {
+    margin-left: auto;
+    background-color: #f1f1f1;
+}
+.bot-response {
+    background-color: #d1e7dd;
+}
+.bot-response:hover {
+    background-color: #ccc;
+}
+.bot-response-references {
+    padding: 0 1.5%;
+    background-color: #eee;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+.spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-top: 4px solid #000;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
