@@ -9,8 +9,9 @@
 1. 安裝 [ollama](https://ollama.com/)
 2. 執行 `ollama pull llama3`
 3. 執行 `pip install -r requirements.txt`
-4. 執行 `sudo apt install nginx`
-5. 創建並修改設定 `vim /etc/nginx/sites-available/<app-name>`
+4. 執行 `sudo apt-get install ffmpeg`
+5. 執行 `sudo apt install nginx`
+6. 創建並修改設定 `vim /etc/nginx/sites-available/<app-name>`
 ```
 server {
     listen 443 ssl;
@@ -34,7 +35,7 @@ server {
     return 301 https://$host$request_uri;
 }
 ```
-6. 啟用設定 `sudo ln -s /etc/nginx/sites-available/<app-name> /etc/nginx/sites-enabled/`
+7. 啟用設定 `sudo ln -s /etc/nginx/sites-available/<app-name> /etc/nginx/sites-enabled/`
 
 ## Execution
 
