@@ -4,6 +4,19 @@
 
 將 `pdfs` 中的資料儲存成 vector embeddings，在使用者輸入問題時便能根據問題的 embeddings 搜尋相關的上下文，再參考上下文中的內容生成問題的回覆。
 
+```mermaid
+graph LR
+A("Load PDFs and Split Text into Chunks<br>(LangChain)") --> B("Encode Chunks into Vectors<br>(Sentence Transformer)")
+B --> C("Store Vectors<br>(FAISS)")
+D("Verbal Question to Text<br>(Speech Recognition)") --> F("Encode Question into Vector<br>(Sentence Transformer)")
+F --> G("Find Distances of Chunks to Question<br>(FAISS)")
+C --> G
+G --> H(Choose Chunks for Context)
+H --> I{"Check Relevance<br>(Ollama)"}
+I -- Revelant --> J("Generate Response<br>(Ollama)")
+I -- Irrevelant --> K(Send 'Irrelevant' Message to User)
+```
+
 ## Installation
 
 1. 安裝 [ollama](https://ollama.com/)
